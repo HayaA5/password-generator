@@ -3,6 +3,8 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 
 const generatePasswordBtnEl = document.querySelector(".btn-generate")
 const passwordsContainerEl = document.querySelector(".passwords-container")
+const changeModeEl = document.getElementById("change-mode")
+let isDarkMode = true;
 
 function generatePassword() {
     let password = "";
@@ -20,9 +22,13 @@ generatePasswordBtnEl.addEventListener("click", function () {
 })
 
 function createPasswordEl() {
-    const password1 = document.createElement("div");
-    password1.className = "password";
-    password1.onclick = (e) => navigator.clipboard.writeText(e.target.innerText);
-    password1.textContent = generatePassword();
-    return password1;
+    const passwordEl = document.createElement("div");
+    passwordEl.className = "password";
+    passwordEl.onclick = (e) => navigator.clipboard.writeText(e.target.innerText);
+    passwordEl.textContent = generatePassword();
+    return passwordEl;
 }
+
+changeModeEl.addEventListener("click", function () {
+    isDarkMode = !isDarkMode;
+})

@@ -1,25 +1,49 @@
+:root {
+    --dark1: #1c1c1c;
+    --dark2: #1F2937;
+    --dark-color: #111827;
+    --grey-blue1: #2F3E53;
+    --grey-blue2: #273549;
+    --light-grey: #D5D4D8;
+    --very-light-green: #ECFDF5;
+    --light-green1: #10B981;
+    --light-green2: #4ADF86;
+    --light-green3: #55F991;
+
+
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     color: white;
     font-family: Inter, sans-serif;
-    background-color: #1c1c1c;
+    background-color: var(--dark1);
 }
 
 .container {
-    background: #1F2937;
+    /* background: #1F2937; */
+    background-color: var(--dark2);
     /* height: 80%;
     width: 50%; */
     width: 450px;
     height: 450px;
     margin: auto;
-    padding: 100px 20px 0px 20px;
+    padding: 10px 20px 0px 20px;
+    border: red 4px solid;
 }
 
 .generate-password-container {
-    border-bottom: 1px solid #2F3E53;
+    border-bottom: 1px solid var(--grey-blue1);
 }
+
+.generate-password-container .change-mode-container {
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .generate-password-container h1 {
     font-family: Karla, sans-serif;
@@ -30,16 +54,16 @@ body {
 .generate-password-container p {
     font-size: 20px;
     font-weight: 400;
-    color: #D5D4D8;
+    color: var(--light-grey)
 }
 
 strong {
-    color: #4ADF86;
+    color: var(--light-green2);
     display: block
 }
 
 .btn-generate {
-    background: #10B981;
+    background: var(--light-green1);
     color: inherit;
     box-shadow: 0px 1px 2px 0px #0000000D;
     border-radius: 6px;
@@ -54,14 +78,14 @@ strong {
 }
 
 .password {
-    background: #273549;
+    background: var(--grey-blue2);
     font-family: Inter;
     font-size: 16px;
     font-weight: 500;
     line-height: 32px;
     letter-spacing: 0em;
     text-align: center;
-    color: #55F991;
+    color: var(--light-green3);
     border-radius: 6px;
     /* width: 211px; */
     height: 39px;
@@ -76,4 +100,8 @@ strong {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.change-mode {
+    cursor: pointer;
 }
